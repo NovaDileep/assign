@@ -39,7 +39,8 @@ div.form-group{
     display: block;
     width: 75%;
     margin-left: 50px;
-    margin-top: -5px;
+    margin-top: 5px;
+    margin-bottom: -5px;
 }
 
 .sign-form button[type=submit]{
@@ -70,6 +71,7 @@ form .indicator span{
     margin-left: 25px;
     background: lightgrey;
     border-radius:5px;
+    color:lightgrey;
 }
 form .indicator span{
     width: 100%;
