@@ -9,7 +9,7 @@ function valid(){
     let phone1=/[0-9]{3}-[0-9]{3}-[0-9]{4}/;
     let phone2=/[0-9]{3}.[0-9]{3}.[0-9]{4}/;
     let phone3=/[0-9]{3} [0-9]{3} [0-9]{4}/;
-    if(regexp.test(email.value) && pwd.value==pwds.value && phstate==true){
+    if(regexp.test(email.value) && pwd.value==pwds.value && (phone1.test(phone.value)||phone2.test(phone.value)||phone3.test(phone.value))){
         return true;
     }
     else if(pwd.value!=pwds.value){
