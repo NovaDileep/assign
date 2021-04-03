@@ -98,13 +98,13 @@ form .indicator span.active.strong{
     background-color:#23ad5c;
 }
 #incorrect{
-    color:red;
+    padding-top: 10px;
     font-weight: 500;
     margin:0%;
 }
 #wrongphone{
 
-    color:red;
+    padding-top: 10px;
     font-weight: 500;
 }
 #constraint{

@@ -5,28 +5,47 @@ function valid(){
      pwd=document.getElementById("pwd");
      pwds=document.getElementById("pwds");
      phone=document.getElementById("phone");
-    let regexp=/^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
+     incorrectp=document.getElementById("incorrect");
+     wrongp=document.getElementById("wrongphone");
+     error=document.getElementById("invalid");
+     
+    let regexp= /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(\.[a-z]{2,3})?$/;
     let phone1=/[0-9]{3}-[0-9]{3}-[0-9]{4}/;
     let phone2=/[0-9]{3}.[0-9]{3}.[0-9]{4}/;
     let phone3=/[0-9]{3} [0-9]{3} [0-9]{4}/;
     if(regexp.test(email.value) && pwd.value==pwds.value && (phone1.test(phone.value)||phone2.test(phone.value)||phone3.test(phone.value))){
         return true;
     }
-    else if(pwd.value!=pwds.value){
-        let incorrectp=document.getElementById("incorrect");
+    if(pwd.value!=pwds.value){
+        incorrectp.style.color="red";
         incorrectp.innerHTML="Passwords are not same";
         pwds.style.border="1px solid red";
     }
-    else if((phone1.test(phone.value)||phone2.test(phone.value)||phone3.test(phone.value))!=true){
-        let wrongp=document.getElementById("wrongphone");
+    else{
+        incorrectp.textContent="Passwords are same";
+        incorrect.style.color="green";
+        pwds.style.border="1px solid green";
+    }
+    if((phone1.test(phone.value)||phone2.test(phone.value)||phone3.test(phone.value))!=true){
+        wrongp.style.color="red";
         wrongp.innerHTML="Invalid format";
         phone.style.border="1px solid red";
     }
     else{
-        let error=document.getElementById("invalid");
+        wrongp.textContent="Valid format";
+        wrongp.style.color="green";
+        phone.style.border="1px solid green";
+    }
+    if(regexp.test(email.value)!=true){
+        
         error.innerHTML="Invalid Email Address";
         error.style.color="red";
         email.style.border="1px solid red";
+    }
+    else{
+        error.textContent="Valid Email Address";
+        error.style.color="green";
+        email.style.border="1px solid green";
     }
     return false;
 }
