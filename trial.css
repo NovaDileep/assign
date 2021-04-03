@@ -1,0 +1,27 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+/* navigation bar */
+#nav-bar{
+    position: sticky;
+    top: 0 !important;;
+    z-index: 10;
+}
+.navbar-brand img{
+	height:60px;
+    width:80px;
+	padding-left:20px;
+}
+.navbar ul li a{
+    color:black!important;
+}
+.navbar ul li a:hover{
+      color:blue !important;
+}
+.footer-copyright{
+    background-color:#4CAF50;
+    color:white;
+    
+}

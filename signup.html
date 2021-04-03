@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="trial.css">
+    <link rel="stylesheet" href="sign.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins%3Awght%40200%3B300%3B400%3B500%3B600&display=swap">
+    <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+	  <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/1c2c2462bf.js"></script>
+    <script src="form.js"></script>
+  </head>
+<body>
+    <!-- navigation bar-->
+    <section id="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="#"><img src="images/keralatour2.jpg"></a>
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="trial.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="districts.html" target="_blank">Districts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signup.html" target="_blank">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signin.html" target="_blank">Sign In</a>
+            </li>  
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      </section>
+    
+    <!--signup-->
+  
+				<form class="sign-form" action="trial.html" onsubmit="return valid()">
+          <h2>Sign Up</h2>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="First Name" id="fname"></div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Last Name" id="lname"></div>
+					<div class="form-group">	
+					  <input onkeyup="phstatus()" class="form-control" placeholder="Phone no:" id="phone"></div>
+            <small id="wrongphone" ></small>
+				  <div class="form-group">	
+				    <input type="email" class="form-control" placeholder="Email Id" id="email" required></div>
+            <small id="invalid"></small>
+            <div class="form-group">
+            <input onkeyup="trigger()" type="password" class="form-control" placeholder="Password" id="pwd" required>
+            <span class="show-pass" onclick="toggle()">
+              <i class="fa fa-eye" onclick="myFunction(this)"></i>
+            </span>
+          </div>
+          <small id="constraint">lowercase, uppercase, number, symbol, minimum 8 characters</small>
+          <div class="indicator">
+            <span class="weak">1</span>
+            <span class="medium">2</span>
+            <span class="strong">3</span>
+          </div>
+          <div class="text">Your password is too weak!</div>
+          
+          <script>
+               const indicator=document.querySelector(".indicator");
+               const text=document.querySelector(".text");
+               const password=document.querySelector("#pwd");
+               const weak=document.querySelector(".weak");
+               const medium=document.querySelector(".medium");
+               const strong=document.querySelector(".strong");
+               
+               let regexpsmall=/[a-z]/;
+               let regexpcap=/[A-Z]/;
+               let regexpnum=/\d/;
+               let regexpsym=/.[!,@,#,$,%,^,&,*,(,),_,+,=,?]/;
+               function trigger(){
+                 strength=0;
+                 if(password.value!=""){
+                   indicator.style.display="block";
+                   indicator.style.display="flex";
+                   if(password.value.length>=8){
+                        strength+=1;
+                   }
+                   if(password.value.match(regexpsmall)){
+                     strength+=1;
+                   }
+                   if(password.value.match(regexpcap)){
+                     strength+=1;
+                   }
+                   if(password.value.match(regexpnum)){
+                     strength+=1;
+                   }
+                   if(password.value.match(regexpsym)){
+                     strength+=1;
+                   }
+                   if(strength==1||strength==2){
+                     weak.classList.add("active");
+                     text.style.display="block";
+                     text.textContent="Your password is too weak!";
+                     text.classList.add("weak");
+                   }
+                   if(strength==3||strength==4){
+                     medium.classList.add("active");
+                     text.textContent="Your password is medium";
+                     text.classList.add("medium");
+                   }
+                   else{
+                     medium.classList.remove("active");
+                     text.classList.remove("medium");
+                   }
+                   if(strength==5){
+                    medium.classList.add("active");
+                     strong.classList.add("active");
+                     text.textContent="Your password is strong";
+                     text.classList.add("strong");
+                   }
+                   else{
+                     strong.classList.remove("active");
+                     text.classList.remove("strong");
+                   }
+                 }
+                 else{
+                  indicator.style.display="none";
+                  text.style.display="none";
+                 }
+               }
+          </script>
+          
+          <div class="form-group">
+						<input type="password" class="form-control" placeholder="Repeat Password" id="pwds" required></div>
+            <small id="incorrect" ></small>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" onchange="change()">
+              <label class="form-check-label" for="exampleCheck1"><small style="color:#999999"> Agree our <span style="color: blue;">Privacy Policy</span> & <span style="color: blue;">Cookie Policy</span></small>
+              </label>
+            </div>
+					<button type="submit" class="btn btn-primary" disabled="disabled" id="signup">Sign Up</button>
+				   
+        </form>
+		
+   
+</body>
+</html>

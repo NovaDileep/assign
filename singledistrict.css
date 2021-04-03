@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(images/kerala2.jpg);
+
+    background-color:#f2f2f2!important;
+    background-size: cover;
+	background-position: center;
+	color:#efefef!important;
+	background-attachment: fixed;
+	
+	padding-bottom: 50px;
+    
+}
+body h1{
+    text-align:center;
+}
+.container .col-md-6 img{
+    padding-left:100px;
+    height: 300px;
+    
+}
+.container .col-md-3 img{
+    height:150px;
+    width:250px;
+    padding:10px;
+}
+.container .col-md-3 img:hover{
+    box-shadow: 0 2px 20px rgb(203, 245, 16);
+}
+.container .col-md-3{
+    text-align: center;
+}

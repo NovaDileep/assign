@@ -1,0 +1,115 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(images/kerala.jpg);
+    background-size: cover;
+	background-position: center;
+	color:#efefef!important;
+	background-attachment: fixed;
+	padding-bottom: 50px;
+}
+#nav-bar{
+    margin-bottom: 30px;
+}
+.sign-form h2{
+    padding-top: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.sign-form{
+    margin-left: 35%;
+    display:block;
+    padding-bottom: 10px;
+    border: 1px solid white;
+    margin-top: 30px;
+    margin-right:35%;
+    text-align: center;
+    background-color: #f7f6f2;
+    border-radius: 10px;
+    width: 330px;
+    padding-right: 25px;
+    
+}
+div.form-group{
+    padding: 5px 5px 5px 10px;
+    display: block;
+    width: 75%;
+    margin-left: 50px;
+    margin-top: -5px;
+}
+
+.sign-form button[type=submit]{
+    width:70%;
+    margin-left:29px;
+    margin-bottom: 15px;
+}
+i{
+    color: black;
+    float: right!important;
+    position: relative;
+    margin-top: -25px;
+    margin-right: 5px;
+}
+
+form .indicator{
+
+     display:flex;
+     align-items:center;
+     justify-content: space-between;
+     margin:10px 0;
+     display: none;
+}
+form .indicator span{
+    width:100%;
+    font-size:10px;
+    margin-right: -20px;  
+    margin-left: 25px;
+    background: lightgrey;
+    border-radius:5px;
+}
+form .indicator span{
+    width: 100%;
+    font-size: 10px;
+    margin-right: -20px;
+    margin-left: 25px;
+    
+    border-radius: 5px;
+}
+form .text{
+    color:black;
+    font-size: 13px;
+    font-weight:500;
+    display:none;
+}
+form .indicator span.active.weak{
+    color:#ff4757;
+    background-color: #ff4757;
+}
+form .indicator span.active.medium{
+    color:orange;
+    background-color: orange;
+}
+form .indicator span.active.strong{
+    color:#23ad5c;
+    background-color:#23ad5c;
+}
+#incorrect{
+    color:red;
+    font-weight: 500;
+    margin:0%;
+}
+#wrongphone{
+
+    color:red;
+    font-weight: 500;
+}
+#constraint{
+    color:black;
+    font-size: 11px;
+    font-weight: 500;
+    padding-left: 5px;
+}
