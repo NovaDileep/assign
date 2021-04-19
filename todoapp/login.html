@@ -17,7 +17,7 @@
      <h1>To-Do</h1>
     <!--signin-->
     
-	<form class="sign-form" action="todo.html" onsubmit="return check()">
+	<form class="sign-form" action="todo.html" onsubmit= "return check()">
           <h2>Log In</h2>
 			<div class="form-group">	
 				<input type="text" class="form-control" placeholder="Username" id="user" required>
@@ -40,7 +40,7 @@
                 if(user.name=='admin' && password.value=='12345'){
                    return true;
                 }
-                else{
+                
                 if(user.value!='admin'){
                   error.innerHTML="Invalid Username";
                   error.style.color="red";
@@ -62,8 +62,8 @@
                }
                return false;
                }
-            }
-            let state=false;
+            
+            state=false;
             function myFunction(show){
                show.classList.toggle('fa-eye-slash');
             }
