@@ -8,19 +8,35 @@ h1{
     color:rgb(226, 241, 15);
     text-shadow:2px 2px 10px yellow;
 }
+h2{
+    padding-top: 30px;
+    text-shadow: 2px 2px 3px rgb(216, 37, 37);
 
+}
 .sign-form{
     margin-top: 50px;
     text-align:center;
-    color:white;
-    text-shadow: 2px 2px 3px rgb(216, 37, 37);
+    color:black;
+    margin-left: 40%;
+    background-color: #f7f6f2;
+    border-radius: 10px;
+    width: 330px;
    
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
 }
 .form-group{
     margin-top:50px;
-    margin-left:35%;
-    margin-right:35%;
+    
 }
 button{
     width:100%;
+}
+i{
+    color: black;
+    float: right!important;
+    position: relative;
+    margin-top: -25px;
+    margin-right: 5px;
 }

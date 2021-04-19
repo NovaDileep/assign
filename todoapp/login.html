@@ -14,43 +14,74 @@
     
 </head>
 <body>
-     <h1>To-Do App</h1>
+     <h1>To-Do</h1>
     <!--signin-->
-    <div id="set">
-	<form class="sign-form" action="#" onsubmit="#">
-          <h2>Sign In</h2>
+    
+	<form class="sign-form" action="todo.html" onsubmit="return check()">
+          <h2>Log In</h2>
 			<div class="form-group">	
 				<input type="text" class="form-control" placeholder="Username" id="user" required>
             </div>
                <small id="invalid"></small>
+         <div class="form-group">	
+            <input type="password" class="form-control" placeholder="Password" id="password" required>
+            <span class="show-pass" onclick="toggle()">
+               <i class="fa fa-eye" onclick="myFunction(this)"></i>
+             </span>
+         </div>
+            <small id="wrongpass"></small>
+                         
              <script>
-               function valid(){
-                email=document.getElementById("email");
+               function check(){
+                user=document.getElementById("user");
                 error=document.getElementById("invalid");
-                regexp= /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(\.[a-z]{2,3})?$/;
-                if(regexp.test(email.value)!=true){
-        
-                  error.innerHTML="Invalid Email Address";
+                password=document.getElementById("password");
+                wrongp=document.getElementById("wrongpass");
+                if(user.name=='admin' && password.value=='12345'){
+                   return true;
+                }
+                else{
+                if(user.value!='admin'){
+                  error.innerHTML="Invalid Username";
                   error.style.color="red";
-                  email.style.border="1px solid red";
-                  return false;
+                  user.style.border="1px solid red";
                  }
               else{
-                  error.textContent="Valid Email Address";
+                  error.textContent="Valid Username";
                   error.style.color="green";
-                  email.style.border="1px solid green";
-                  return true;
+                  user.style.border="1px solid green";
                 }
+               if(password.value!='12345'){
+                  wrongp.innerHTML="Wrong password";
+                  wrongp.style.color="red";
+                  password.style.border="red";
                }
+               else{
+                  wrongp.innerHTML=" ";
+                  password.style.border="1px solid green";
+               }
+               return false;
+               }
+            }
+            let state=false;
+            function myFunction(show){
+               show.classList.toggle('fa-eye-slash');
+            }
+            function toggle(){
+               if(state){
+                 password.setAttribute("type","password");
+                 state=false;
+               }
+               else{
+                  password.setAttribute("type","text");
+                  state=true;
+               }
+            } 
              </script>
-            <div class="form-group">	
-				<input type="password" class="form-control" placeholder="Password" id="password" required>
-            </div>
-               <small id="wrongpass"></small>
-               <div class="form-group">	
+            	  <div class="form-group">  
                  <button type="submit" class="btn btn-primary">Log In</button>
                     </div> 
 				</form>
-			</div>
+			
 </body>
 </html>
