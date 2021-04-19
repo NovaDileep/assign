@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+	<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+     <h1>To-Do App</h1>
+    <!--signin-->
+    <div id="set">
+	<form class="sign-form" action="#" onsubmit="#">
+          <h2>Sign In</h2>
+			<div class="form-group">	
+				<input type="text" class="form-control" placeholder="Username" id="user" required>
+            </div>
+               <small id="invalid"></small>
+             <script>
+               function valid(){
+                email=document.getElementById("email");
+                error=document.getElementById("invalid");
+                regexp= /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(\.[a-z]{2,3})?$/;
+                if(regexp.test(email.value)!=true){
+        
+                  error.innerHTML="Invalid Email Address";
+                  error.style.color="red";
+                  email.style.border="1px solid red";
+                  return false;
+                 }
+              else{
+                  error.textContent="Valid Email Address";
+                  error.style.color="green";
+                  email.style.border="1px solid green";
+                  return true;
+                }
+               }
+             </script>
+            <div class="form-group">	
+				<input type="password" class="form-control" placeholder="Password" id="password" required>
+            </div>
+               <small id="wrongpass"></small>
+               <div class="form-group">	
+                 <button type="submit" class="btn btn-primary">Log In</button>
+                    </div> 
+				</form>
+			</div>
+</body>
+</html>
