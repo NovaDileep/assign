@@ -17,7 +17,7 @@
      <h1>To-Do</h1>
     <!--signin-->
     
-	<form class="sign-form" action="todo.html" onsubmit= "return check()">
+	<form class="sign-form" action="todo.html" onsubmit="return check()">
           <h2>Log In</h2>
 			<div class="form-group">	
 				<input type="text" class="form-control" placeholder="Username" id="user" required>
@@ -31,57 +31,11 @@
          </div>
             <small id="wrongpass"></small>
                          
-             <script>
-               function check(){
-                user=document.getElementById("user");
-                error=document.getElementById("invalid");
-                password=document.getElementById("password");
-                wrongp=document.getElementById("wrongpass");
-                if(user.name=='admin' && password.value=='12345'){
-                   return true;
-                }
-                
-                if(user.value!='admin'){
-                  error.innerHTML="Invalid Username";
-                  error.style.color="red";
-                  user.style.border="1px solid red";
-                 }
-              else{
-                  error.textContent="Valid Username";
-                  error.style.color="green";
-                  user.style.border="1px solid green";
-                }
-               if(password.value!='12345'){
-                  wrongp.innerHTML="Wrong password";
-                  wrongp.style.color="red";
-                  password.style.border="red";
-               }
-               else{
-                  wrongp.innerHTML=" ";
-                  password.style.border="1px solid green";
-               }
-               return false;
-               }
-            
-            state=false;
-            function myFunction(show){
-               show.classList.toggle('fa-eye-slash');
-            }
-            function toggle(){
-               if(state){
-                 password.setAttribute("type","password");
-                 state=false;
-               }
-               else{
-                  password.setAttribute("type","text");
-                  state=true;
-               }
-            } 
-             </script>
+             
             	  <div class="form-group">  
                  <button type="submit" class="btn btn-primary">Log In</button>
                     </div> 
 				</form>
-			
-</body>
+         <script src="todo.js"></script>
+   </body>
 </html>
