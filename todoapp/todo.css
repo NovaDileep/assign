@@ -19,7 +19,7 @@ a:hover{
 td,th{
     border:2px solid black;
     background-color: palevioletred;
-    text-align: center;
+    text-align: center!important;
 }
 p{
     margin-top: 50px !important;

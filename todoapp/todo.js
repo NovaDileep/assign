@@ -4,6 +4,7 @@ function check(){
     error=document.getElementById("invalid");
     password=document.getElementById("password");
     wrongp=document.getElementById("wrongpass");
+    
     if(user.value=='admin' && password.value=='12345'){
        return true;
     }

@@ -25,13 +25,30 @@ xhttp.onreadystatechange=function(){
 xhttp.open("GET","https://jsonplaceholder.typicode.com/todos",true);
 xhttp.send();
 }
-count=0;
 function h(){
-    disab=document.querySelectorAll('input[type="checkbox"]:disabled').length;
-    count=document.querySelectorAll('input[type="checkbox"]:checked').length;
-    console.log(disab);
-    console.log(count-disab);
-    if((count-disab)==5){
-        setTimeout(function(){alert("done");},500);
-    }
+    
+    c().then(function(){
+        if((count-disab)==5){
+        setTimeout(function(){alert("Congrats. 5 Tasks have been Successfully Completed");},500);
+    }})
+    .catch(function(e){
+        document.write(e);
+    })
+}
+count=0;
+function c(){
+    return new Promise(function(res,rej){
+        disab=document.querySelectorAll('input[type="checkbox"]:disabled').length;
+        count=document.querySelectorAll('input[type="checkbox"]:checked').length;
+        console.log(disab);
+        console.log(count-disab);
+        var success=false;
+        if(!success){
+            res();
+        }
+        else{
+            rej("Sorry! Some error occured, please try again later");
+        }
+    })
+    
 }
